@@ -1,0 +1,76 @@
+$checkboxBackground: #FFFFFF;
+$checkboxBorder: #9ABBCE;
+$checkboxBorderChecked: #2196F3;
+$header: #4A4A4A;
+$transferFilter: #FFFFFF;
+
+.appTransferFilter {
+  background-color: $transferFilter;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.appTransferFilter__header {
+  padding: 20px;
+  margin: 0;
+  white-space: nowrap;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  color: $header;
+
+}
+
+.option {
+  display: block;
+  padding-left: 50px;
+  margin: 0 0 16px 0;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.option:last-child {
+  padding-bottom: 20px;
+}
+
+.option__checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.customCheckbox {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: 1px solid $checkboxBorder;
+  border-radius: 2px;
+  background-color: $checkboxBackground;
+  margin-left: -30px;
+}
+
+.customCheckbox::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../../../public/Shape.png");
+  opacity: 0;
+  transition: .2s;
+}
+
+.option__checkbox:checked + .customCheckbox {
+  border-color: $checkboxBorderChecked;
+}
+
+.option__checkbox:checked + .customCheckbox::before {
+  opacity: 1;
+}

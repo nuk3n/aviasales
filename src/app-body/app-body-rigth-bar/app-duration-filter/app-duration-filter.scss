@@ -1,0 +1,42 @@
+$option: #FFFFFF;
+$optionActiveBackground: #2196F3;
+$optionActiveText: #FFFFFF;
+$border: #DFE5EC;
+$optionText: #4A4A4A;
+
+.durationFilter {
+  display: flex;
+  flex-wrap: nowrap;
+  border: 1px solid $border;
+  border-radius: 5px;
+}
+
+.durationFilter__option {
+  white-space: nowrap;
+  padding: 15px 30px;
+  font-family: Open Sans, serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: $optionText;
+  background-color: $option;
+}
+
+.durationFilter__option:first-child {
+  border-right: 1px solid $border;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.durationFilter__option:last-child {
+  border-left: 1px solid $border;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.durationFilter__option.active {
+  color: $optionActiveText;
+  background-color: $optionActiveBackground;
+}

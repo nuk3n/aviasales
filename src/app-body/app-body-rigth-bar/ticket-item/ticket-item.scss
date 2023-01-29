@@ -1,0 +1,70 @@
+$ticket: #FFFFFF;
+$price: #2196F3;
+$subtitle: #A0B0B9;
+$info: #4A4A4A;
+
+
+.ticketItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background-color: $ticket;
+  box-shadow: 0 2px 8px 0 #0000001A;
+  border-radius: 5px;
+}
+
+.ticketItem:first-child {
+  margin-top: 20px;
+}
+
+.ticketItem__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 20px 10px 20px;
+}
+
+.ticketItem__price {
+  font-family: Open Sans, serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: left;
+  color: $price;
+}
+
+.ticketItem__tripInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticketItem__parameter {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10px 20px;
+}
+
+.ticketItem__parameter:last-child {
+  margin-right: 70px;
+}
+
+.ticketItem__subtitle {
+  font-family: Open Sans, serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: $subtitle;
+}
+
+.ticketItem__info {
+  font-family: Open Sans, serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-align: left;
+  color: $info;
+}
+

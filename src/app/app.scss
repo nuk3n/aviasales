@@ -1,0 +1,15 @@
+$bodyColor: #E5E5E5;
+$appColor: #F3F7FA;
+
+body {
+  background-color: $bodyColor;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 930px;
+  margin: auto;
+  align-items: center;
+  background-color: #F3F7FA;
+}

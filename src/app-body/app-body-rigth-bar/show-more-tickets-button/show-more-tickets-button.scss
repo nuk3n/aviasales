@@ -1,0 +1,17 @@
+$button: #2196F3;
+$buttonText: #FFFFFF;
+
+
+.showMoreTicketButton {
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: $button;
+  font-family: Open Sans, serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: $buttonText;
+}
