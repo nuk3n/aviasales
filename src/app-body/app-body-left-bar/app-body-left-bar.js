@@ -1,10 +1,10 @@
 /* eslint-disable */
 import AppTransferFilter from './app-transfer-filter';
-import './app-body-left-bar.scss';
+import classes from './app-body-left-bar.module.scss';
 
 function AppBodyLeftBar() {
   return (
-    <div className="appBody__leftBar">
+    <div className={classes['appBody__leftBar']}>
       <AppTransferFilter />
     </div>
   );

@@ -1,9 +1,9 @@
 /* eslint-disable */
-import './show-more-tickets-button.scss';
+import classes from './show-more-tickets-button.module.scss';
 
 function ShowMoreTicketsButton() {
   return (
-    <button type="button" className="showMoreTicketButton">
+    <button type="button" className={classes.showMoreTicketButton}>
       ПОКАЗАТЬ ЕЩЁ 5 БИЛЕТОВ!
     </button>
   );

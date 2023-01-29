@@ -1,31 +1,31 @@
 /* eslint-disable */
-import './app-transfer-filter.scss';
+import classes from './app-transfer-filter.module.scss';
 
 function AppTransferFilter() {
   return (
-    <div className="appTransferFilter">
-      <h1 className="appTransferFilter__header">КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
-      <label className="option">
-        <input className="option__checkbox" type="checkbox" />
-        <span className="customCheckbox"></span>
+    <div className={classes.appTransferFilter}>
+      <h1 className={classes['appTransferFilter__header']}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
+      <label className={classes.option}>
+        <input className={classes['option__checkbox']} type="checkbox" />
+        <span className={classes.customCheckbox}></span>
         Все
       </label>
-      <label className="option">
-        <input className="option__checkbox" type="checkbox" />
-        <span className="customCheckbox"></span>
+      <label className={classes.option}>
+        <input className={classes['option__checkbox']} type="checkbox" />
+        <span className={classes.customCheckbox}></span>
         Без пересадок
       </label>
-      <label className="option">
-        <input className="option__checkbox" type="checkbox" />
-        <span className="customCheckbox"></span>1 пересадка
+      <label className={classes.option}>
+        <input className={classes['option__checkbox']} type="checkbox" />
+        <span className={classes.customCheckbox}></span>1 пересадка
       </label>
-      <label className="option">
-        <input className="option__checkbox" type="checkbox" />
-        <span className="customCheckbox"></span>2 пересадки
+      <label className={classes.option}>
+        <input className={classes['option__checkbox']} type="checkbox" />
+        <span className={classes.customCheckbox}></span>2 пересадки
       </label>
-      <label className="option">
-        <input className="option__checkbox" type="checkbox" />
-        <span className="customCheckbox"></span>3 пересадки
+      <label className={classes.option}>
+        <input className={classes['option__checkbox']} type="checkbox" />
+        <span className={classes.customCheckbox}></span>3 пересадки
       </label>
     </div>
   );

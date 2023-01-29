@@ -1,9 +1,9 @@
 /* eslint-disable */
-import './app-header.scss';
+import classes from './app-header.module.scss';
 
 function AppHeader() {
   return (
-    <div className="appHeader">
+    <div className={classes.appHeader}>
       <img src="/aviasales-logo.png" alt="aviasales-logo"></img>
     </div>
   );

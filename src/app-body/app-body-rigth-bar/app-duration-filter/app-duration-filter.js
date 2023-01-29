@@ -1,12 +1,12 @@
 /* eslint-disable */
-import './app-duration-filter.scss';
+import classes from './app-duration-filter.module.scss';
 
 function AppDurationFilter() {
   return (
-    <div className="durationFilter">
-      <div className="durationFilter__option active">САМЫЙ ДЕШЕВЫЙ</div>
-      <div className="durationFilter__option">САМЫЙ БЫСТРЫЙ</div>
-      <div className="durationFilter__option">ОПТИМАЛЬНЫЙ</div>
+    <div className={classes.durationFilter}>
+      <div className={`${classes['durationFilter__option']} ${classes['active']}`}>САМЫЙ ДЕШЕВЫЙ</div>
+      <div className={classes['durationFilter__option']}>САМЫЙ БЫСТРЫЙ</div>
+      <div className={classes['durationFilter__option']}>ОПТИМАЛЬНЫЙ</div>
     </div>
   );
 }
