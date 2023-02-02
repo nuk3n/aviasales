@@ -1,8 +1,8 @@
-$checkboxBackground: #FFFFFF;
-$checkboxBorder: #9ABBCE;
-$checkboxBorderChecked: #2196F3;
-$header: #4A4A4A;
-$transferFilter: #FFFFFF;
+$checkboxBackground: #ffffff;
+$checkboxBorder: #9abbce;
+$checkboxBorderChecked: #2196f3;
+$header: #4a4a4a;
+$transferFilter: #ffffff;
 
 .appTransferFilter {
   background-color: $transferFilter;
@@ -21,7 +21,6 @@ $transferFilter: #FFFFFF;
   line-height: 12px;
   letter-spacing: 0.5px;
   color: $header;
-
 }
 
 .option {
@@ -55,16 +54,16 @@ $transferFilter: #FFFFFF;
 }
 
 .customCheckbox::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 12px;
   height: 8px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url("../../../../public/Shape.png");
+  background-image: url('../../../../public/Shape.png');
   opacity: 0;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .option__checkbox:checked + .customCheckbox {

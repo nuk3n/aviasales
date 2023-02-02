@@ -50,16 +50,7 @@
     "import/order": [
       "error",
       {
-        "groups": [
-          "index",
-          "sibling",
-          "parent",
-          "internal",
-          "external",
-          "builtin",
-          "object",
-          "type"
-        ]
+        "groups": ["index", "sibling", "parent", "internal", "external", "builtin", "object", "type"]
       }
     ]
   },

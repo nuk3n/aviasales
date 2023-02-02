@@ -1,8 +1,8 @@
-$option: #FFFFFF;
-$optionActiveBackground: #2196F3;
-$optionActiveText: #FFFFFF;
-$border: #DFE5EC;
-$optionText: #4A4A4A;
+$option: #ffffff;
+$optionActiveBackground: #2196f3;
+$optionActiveText: #ffffff;
+$border: #dfe5ec;
+$optionText: #4a4a4a;
 
 .durationFilter {
   display: flex;
@@ -37,6 +37,7 @@ $optionText: #4A4A4A;
 }
 
 .durationFilter__option.active {
+  transition: 0.4s;
   color: $optionActiveText;
   background-color: $optionActiveBackground;
 }

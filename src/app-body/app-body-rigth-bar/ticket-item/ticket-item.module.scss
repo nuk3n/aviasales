@@ -1,15 +1,14 @@
-$ticket: #FFFFFF;
-$price: #2196F3;
-$subtitle: #A0B0B9;
-$info: #4A4A4A;
-
+$ticket: #ffffff;
+$price: #2196f3;
+$subtitle: #a0b0b9;
+$info: #4a4a4a;
 
 .ticketItem {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   background-color: $ticket;
-  box-shadow: 0 2px 8px 0 #0000001A;
+  box-shadow: 0 2px 8px 0 #0000001a;
   border-radius: 5px;
 }
 
@@ -67,4 +66,3 @@ $info: #4A4A4A;
   text-align: left;
   color: $info;
 }
-
