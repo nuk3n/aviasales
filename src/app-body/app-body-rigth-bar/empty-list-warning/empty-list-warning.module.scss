@@ -1,0 +1,15 @@
+$emptyListWarning: #FFC107;
+$textColor: #FFFFFF;
+
+.emptyListWarning {
+  margin-top: 30px;
+  height: 40px;
+  line-height: 40px;
+  box-shadow: 0 2px 8px 0 #0000001a;
+  border-radius: 5px;
+  background-color: $emptyListWarning;
+  color: $textColor;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Open Sans, serif;
+}

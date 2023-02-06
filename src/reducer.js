@@ -1,15 +1,19 @@
 const initialState = {
+  error: false,
+  loading: false,
   filter: 'cheap',
+  tickets: [],
+  ticketsToShowNumber: 5,
   transfer: {
     all: false,
-    without: false,
+    without: true,
     oneTransfer: false,
-    twoTransfers: false,
+    twoTransfers: true,
     threeTransfers: false,
   },
 };
 
-const allFilter = (obj, checked) => {
+const allFiltersChecked = (obj, checked) => {
   const newObj = { ...obj };
   Object.keys(newObj).forEach((el) => {
     newObj[el] = checked;
@@ -19,12 +23,25 @@ const allFilter = (obj, checked) => {
 
 // eslint-disable-next-line default-param-last
 const reducer = (state = initialState, action) => {
+  const tickets = [...state.tickets];
   const stateTransfer = { ...state.transfer };
   switch (action.type) {
+    case 'setError':
+      return { ...state, error: action.error };
+    case 'setLoading':
+      return { ...state, loading: action.loading };
     case 'setFilter':
-      return { ...state, filter: action.filter };
+      return { ...state, tickets, filter: action.filter };
+    case 'setTickets':
+      return { ...state, tickets: [...state.tickets, ...action.tickets] };
+    case 'setTicketsNumber':
+      return { ...state, ticketsToShowNumber: action.ticketsToShowNumber };
     case 'setTransfer':
-      if (action.option === 'all') return { ...state, transfer: allFilter(state.transfer, action.checked) };
+      if (action.option === 'all')
+        return {
+          ...state,
+          transfer: allFiltersChecked(state.transfer, action.checked),
+        };
       if (action.option !== 'all' && stateTransfer.all === true) {
         stateTransfer.all = false;
         stateTransfer[action.option] = action.checked;

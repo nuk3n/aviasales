@@ -5,6 +5,8 @@ $header: #4a4a4a;
 $transferFilter: #ffffff;
 
 .appTransferFilter {
+  display: flex;
+  flex-direction: column;
   background-color: $transferFilter;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;

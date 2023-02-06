@@ -8,7 +8,8 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  width: 930px;
+  width: 100%;
+  max-width: 930px;
   margin: auto;
   align-items: center;
   background-color: #f3f7fa;

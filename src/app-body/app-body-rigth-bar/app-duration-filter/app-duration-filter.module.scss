@@ -9,6 +9,9 @@ $optionText: #4a4a4a;
   flex-wrap: nowrap;
   border: 1px solid $border;
   border-radius: 5px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 }
 
 .durationFilter__option {

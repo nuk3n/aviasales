@@ -1,16 +1,25 @@
-/* eslint-disable */
 import classes from './app.module.scss';
 
 import AppHeader from '../app-header';
 import AppBody from '../app-body';
+import ErrorBoundary from '../error-boundary';
+import * as actions from '../actions';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ getInitialTickets }) {
+  useEffect(() => {
+    getInitialTickets();
+  }, [getInitialTickets]);
+
   return (
     <section className={classes.app}>
-      <AppHeader />
-      <AppBody />
+      <ErrorBoundary>
+        <AppHeader />
+        <AppBody />
+      </ErrorBoundary>
     </section>
   );
 }
 
-export default App;
+export default connect(null, actions)(App);
