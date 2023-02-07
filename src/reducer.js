@@ -1,6 +1,5 @@
 const initialState = {
-  error: false,
-  loading: false,
+  status: 'finished',
   filter: 'cheap',
   tickets: [],
   ticketsToShowNumber: 5,
@@ -26,10 +25,8 @@ const reducer = (state = initialState, action) => {
   const tickets = [...state.tickets];
   const stateTransfer = { ...state.transfer };
   switch (action.type) {
-    case 'setError':
-      return { ...state, error: action.error };
-    case 'setLoading':
-      return { ...state, loading: action.loading };
+    case 'setStatus':
+      return { ...state, status: action.status };
     case 'setFilter':
       return { ...state, tickets, filter: action.filter };
     case 'setTickets':

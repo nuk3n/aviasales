@@ -3,8 +3,13 @@ import TicketItem from '../ticket-item';
 import ShowMoreTicketsButton from '../show-more-tickets-button';
 import EmptyListWarning from '../empty-list-warning';
 import { connect } from 'react-redux';
+import { useEffect, useState } from 'react';
 
-function TicketList({ tickets, amount, transfer, filter, error }) {
+function TicketList({ tickets, transfer, filter, status }) {
+  const [ticketsToShow, setTicketsToShow] = useState(5);
+  useEffect(() => {
+    setTicketsToShow(5);
+  }, [transfer, filter]);
   const cheapFilter = (a, b) => a.price - b.price;
   const fastFilter = (a, b) =>
     a.segments[0].duration + a.segments[1].duration - (b.segments[0].duration + b.segments[1].duration);
@@ -45,7 +50,7 @@ function TicketList({ tickets, amount, transfer, filter, error }) {
     if (filter === 'cheap') filteredTicketList.sort(cheapFilter);
     if (filter === 'fast') filteredTicketList.sort(fastFilter);
 
-    return filteredTicketList.slice(0, amount).map((ticket) => (
+    return filteredTicketList.slice(0, ticketsToShow).map((ticket) => (
       <li key={ticket.id}>
         <TicketItem ticketInfo={ticket} />
       </li>
@@ -53,8 +58,9 @@ function TicketList({ tickets, amount, transfer, filter, error }) {
   };
 
   const finalTicketsList = filterTickets(tickets);
-  const showMoreTicketsButton = finalTicketsList.length !== 0 ? <ShowMoreTicketsButton /> : null;
-  const emptyListWarning = finalTicketsList.length === 0 && !error ? <EmptyListWarning /> : null;
+  const showMoreTicketsButton =
+    finalTicketsList.length !== 0 ? <ShowMoreTicketsButton setMoreTickets={setTicketsToShow} /> : null;
+  const emptyListWarning = finalTicketsList.length === 0 && !(status === 'error') ? <EmptyListWarning /> : null;
 
   return (
     <div className={classes.appBody__ticketList}>
@@ -66,9 +72,8 @@ function TicketList({ tickets, amount, transfer, filter, error }) {
 }
 
 const mapStateToProps = (state) => ({
-  error: state.error,
+  status: state.status,
   tickets: state.tickets,
-  amount: state.ticketsToShowNumber,
   transfer: state.transfer,
   filter: state.filter,
 });

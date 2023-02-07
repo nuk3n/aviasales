@@ -1,28 +1,21 @@
 import uuid from 'react-uuid';
 
 const searchUrl = 'https://aviasales-test-api.kata.academy/tickets?searchId=';
-let ticketsToShowNumber = 5;
 
-const setError = (status) => ({
-  type: 'setError',
-  error: status,
-});
-
-const setLoading = (status) => ({
-  type: 'setLoading',
-  loading: status,
+const setStatus = (status) => ({
+  type: 'setStatus',
+  status,
 });
 
 const fetchRetry = async (url, search, tries, dispatch) => {
   try {
-    dispatch(setLoading(true));
+    dispatch(setStatus('loading'));
     const request = await fetch(`${url}${search}`);
     const ticketsResponse = await request.json();
     return ticketsResponse;
   } catch (err) {
     if (tries === 1) {
-      dispatch(setError(true));
-      dispatch(setLoading(false));
+      dispatch(setStatus('error'));
       return false;
     }
     const fetch = await fetchRetry(url, search, tries - 1, dispatch);
@@ -43,24 +36,11 @@ export const getInitialTickets = () => async (dispatch) => {
       dispatch({ type: 'setTickets', tickets });
     }
     if (!loading) {
-      dispatch(setLoading(false));
+      dispatch(setStatus('finished'));
     }
   }
 };
 
-export const setMoreTickets = () => (dispatch) => {
-  ticketsToShowNumber += 5;
-  dispatch({ type: 'setTicketsNumber', ticketsToShowNumber });
-};
+export const setFilter = (filter) => ({ type: 'setFilter', filter });
 
-export const setFilter = (filter) => (dispatch) => {
-  ticketsToShowNumber = 5;
-  dispatch({ type: 'setTicketsNumber', ticketsToShowNumber });
-  dispatch({ type: 'setFilter', filter });
-};
-
-export const setTransfer = (option, checked) => (dispatch) => {
-  ticketsToShowNumber = 5;
-  dispatch({ type: 'setTicketsNumber', ticketsToShowNumber });
-  dispatch({ type: 'setTransfer', option, checked });
-};
+export const setTransfer = (option, checked) => ({ type: 'setTransfer', option, checked });

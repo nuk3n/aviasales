@@ -1,13 +1,11 @@
 import classes from './show-more-tickets-button.module.scss';
-import * as actions from '../../../actions';
-import { connect } from 'react-redux';
 
 function ShowMoreTicketsButton({ setMoreTickets }) {
   return (
-    <button type="button" className={classes.showMoreTicketButton} onClick={setMoreTickets}>
+    <button type="button" className={classes.showMoreTicketButton} onClick={() => setMoreTickets((prev) => prev + 5)}>
       ПОКАЗАТЬ ЕЩЁ 5 БИЛЕТОВ!
     </button>
   );
 }
 
-export default connect(null, actions)(ShowMoreTicketsButton);
+export default ShowMoreTicketsButton;
