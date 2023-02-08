@@ -1,5 +1,5 @@
 import classes from './app-transfer-filter.module.scss';
-import * as actions from '../../../actions';
+import * as actions from '../../../store/actions';
 import { connect } from 'react-redux';
 
 function AppTransferFilter({ transfer, setTransfer }) {
@@ -67,7 +67,7 @@ function AppTransferFilter({ transfer, setTransfer }) {
 }
 
 const mapStateToProps = (state) => ({
-  transfer: state.transfer,
+  transfer: state.transfer.transfer,
 });
 
 export default connect(mapStateToProps, actions)(AppTransferFilter);

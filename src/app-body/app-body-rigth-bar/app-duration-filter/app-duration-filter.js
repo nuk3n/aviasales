@@ -1,7 +1,7 @@
 /* eslint-disable */
 import classes from './app-duration-filter.module.scss';
 import { connect } from 'react-redux';
-import * as actions from '../../../actions';
+import * as actions from '../../../store/actions';
 
 function AppDurationFilter({ filter, setFilter }) {
   const cheap = filter === 'cheap' ? 'active' : null;
@@ -25,7 +25,7 @@ function AppDurationFilter({ filter, setFilter }) {
 
 const mapStateToProps = (state) => {
   return {
-    filter: state.filter,
+    filter: state.filter.filter,
   };
 };
 

@@ -3,7 +3,7 @@ import classes from './app.module.scss';
 import AppHeader from '../app-header';
 import AppBody from '../app-body';
 import ErrorBoundary from '../error-boundary';
-import * as actions from '../actions';
+import * as actions from '../store/actions';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 

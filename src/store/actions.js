@@ -7,6 +7,10 @@ const setStatus = (status) => ({
   status,
 });
 
+export const setFilter = (filter) => ({ type: 'setFilter', filter });
+
+export const setTransfer = (option, checked) => ({ type: 'setTransfer', option, checked });
+
 const fetchRetry = async (url, search, tries, dispatch) => {
   try {
     dispatch(setStatus('loading'));
@@ -40,7 +44,3 @@ export const getInitialTickets = () => async (dispatch) => {
     }
   }
 };
-
-export const setFilter = (filter) => ({ type: 'setFilter', filter });
-
-export const setTransfer = (option, checked) => ({ type: 'setTransfer', option, checked });

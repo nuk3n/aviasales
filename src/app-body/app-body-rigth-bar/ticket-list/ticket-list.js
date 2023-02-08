@@ -72,10 +72,10 @@ function TicketList({ tickets, transfer, filter, status }) {
 }
 
 const mapStateToProps = (state) => ({
-  status: state.status,
-  tickets: state.tickets,
-  transfer: state.transfer,
-  filter: state.filter,
+  status: state.status.status,
+  tickets: state.tickets.tickets,
+  transfer: state.transfer.transfer,
+  filter: state.filter.filter,
 });
 
 export default connect(mapStateToProps)(TicketList);
